@@ -1,0 +1,944 @@
+/* Introduction
+	Dolce ver Maj 2.0
+	by L1n4r1A & RabiLuv
+	feat. MDTG + taiy
+MarinDeck v38 , 2021/03/03 */
+
+/* コマンドメモ: cleancss -o develop/css/theme/dolce/dolce_MajV2.min.css develop/css/theme/dolce/dolce_MajV2.css */
+
+:root {
+  /* Dolce colorpalette */
+  --choco: #714116;
+  --vanilla: #ede7d4;
+  --vanilla-light: #f6f4e1;
+  --berry: #e06766;
+  --berry-light: #e195a5;
+  --whipcream: #ffecf1;
+  --honey: #ffa500;
+  --soda: #95a5e1;
+  --melon: #95e1a5;
+
+  /* prf.js */
+  --prf-c: var(--choco);
+  --prf-c-mute: var(--berry);
+  --prf-c-link: var(--berry);
+  --prf-c-border: var(--choco);
+  --prf-bg: var(--vanilla-light);
+  --prf-bg-header: var(--vanilla);
+  --prf-c-focus: #0000;
+  --prf-bg-focus: #0000;
+
+  /* Direct Message */
+  /* 相手のメッセージの背景 */
+  --color1: var(--vanilla-light);
+  /* 相手のメッセージのフォントカラー */
+  --fColor1: var(--berry);
+  /* 相手のメッセージ内のリンクのフォントカラー */
+  --fColorA1: var(--choco);
+  /* 自分のメッセージの背景 */
+  --color2: var(--vanilla-light);
+  /* 自分のメッセージのフォントカラー */
+  --fColor2: var(--choco);
+  /* 自分のメッセージ内のリンクのフォントカラー */
+  --fColorA2: var(--berry);
+}
+
+@mixin theme {
+  div.md-prf > .md-prf_contents > .username > .prf-follow-status {
+    color: var(--whipcream) !important;
+  }
+
+  /* 基本動作系統 */
+  /* 改訂版 起動時ローディング画面：ロゴ */
+  body > .js-app-loading img[alt="Loading…"] {
+    content: url(https://cdn.discordapp.com/attachments/806512320779517952/807291592398471168/Dolce_loadingLogo256.png) !important;
+    width: 256px !important;
+    height: 256px !important;
+    margin-left: calc(256px / -2 + 2px) !important;
+    margin-top: calc(256px / -2 + 2px) !important;
+  }
+  body > .js-app-loading {
+    user-select: none !important;
+    pointer-events: none !important;
+    background-color: var(--vanilla) !important;
+  }
+  body {
+    margin: 0 !important;
+  }
+
+  /* 薄いテキスト */
+  /* .txt-mute,
+  .other-replies {
+    color: var(--berry-light) !important;
+  }
+  .txt-mute.tweet {
+    color: inherit !important;
+  } */
+
+  /* Tweet画面 */
+  .compose {
+    background-color: var(--vanilla) !important;
+    color: var(--choco) !important;
+  }
+  .compose-text-title {
+    color: var(--choco) !important;
+  }
+  .compose-text-container,
+  .compose-text-container textarea,
+  .compose-message-recipient-input-container,
+  .compose-message-account,
+  .js-quote-tweet-holder,
+  .compose-media-bar-holder {
+    background-color: var(--vanilla-light) !important;
+    color: var(--choco) !important;
+  }
+  .compose-message-recipient {
+    background-color: var(--choco) !important;
+    color: var(--vanilla-light) !important;
+  }
+  .account-selector-grid-mode > .icon {
+    color: var(--berry) !important;
+  }
+
+  .compose-account {
+    color: inherit !important;
+    border-radius: 10px !important;
+    padding: 4px !important;
+    margin: -4px 4px 12px !important;
+  }
+  .is-minigrid .compose-account {
+    margin: -4px 1px 5px 0 !important;
+  }
+  .is-list .compose-account {
+    margin: 0 8px 2px !important;
+  }
+  .compose-account-selected {
+    background-color: var(--berry) !important;
+    color: #fff !important;
+  }
+  .compose-account-img {
+    background-color: #0000 !important;
+  }
+  .compose-account:focus .compose-account-img {
+    box-shadow: none !important;
+  }
+  .compose-account:focus,
+  .compose-account:active,
+  .compose-account.is-selected {
+    background-color: var(--choco) !important;
+    color: var(--vanilla-light) !important;
+  }
+
+  /* ツイート送信ボタン */
+  /* 送信中のグルグル */
+  /* .spinner-button-icon-spinner {
+    background-image: url() !important;
+  } */
+  /* 送信後のチェックマーク */
+  .compose-send-button-success {
+    color: var(--berry) !important;
+  }
+
+  /* リプライの三角形 */
+  .replyto-caret {
+    display: none !important;
+  }
+
+  /* 常に文字数カウンターを表示し、プログレスバーを非表示 */
+  .compose-text-container > .txt-right {
+    position: absolute !important;
+    right: 10px !important;
+    bottom: 10px !important;
+    margin: 0 !important;
+    pointer-events: none !important;
+  }
+  .js-character-count,
+  .js-character-count.is-hidden {
+    display: inline !important;
+    margin-right: 0 !important;
+  }
+  .js-progress-svg {
+    margin-left: 6px !important;
+  }
+  .js-character-count {
+    padding: 2px 4px !important;
+    background: var(--choco) !important;
+    color: #fff !important;
+    border-radius: 3px !important;
+    font-family: monospace, monospace !important;
+  }
+  .js-character-count.color-twitter-red {
+    background: var(--berry) !important;
+  }
+  /* プログレスバー */
+  /* 影 */
+  .js-progress-svg circle.stroke-twitter-light-gray {
+    stroke: var(--vanilla) !important;
+  }
+  /* 通常 */
+  .js-progress-svg circle.stroke-twitter-blue {
+    stroke: var(--choco) !important;
+  }
+  /* 上限間近 */
+  .js-progress-svg circle.stroke-twitter-yellow {
+    stroke: var(--berry-light) !important;
+  }
+  /* 上限 */
+  .js-progress-svg circle.stroke-twitter-red {
+    stroke: var(--berry) !important;
+  }
+
+  /* スケジュール カレンダー */
+  .popover,
+  #calbody,
+  #calweeks {
+    background-color: var(--vanilla-light) !important;
+  }
+  .cal,
+  .cal input,
+  .cal a:not(.caldisabled),
+  #caldays span {
+    color: var(--choco) !important;
+  }
+  #caltoday {
+    background-color: var(--berry) !important;
+    color: var(--vanilla-light) !important;
+  }
+  #calcurrent {
+    background-color: var(--choco) !important;
+    color: var(--vanilla-light) !important;
+  }
+
+  /* リプライ */
+  .inline-reply {
+    background-color: var(--choco) !important;
+    color: var(--vanilla-light) !important;
+    border-radius: 0 0 10px 10px !important;
+  }
+  .reply-triangle {
+    border-bottom-color: var(--choco) !important;
+  }
+  .inline-reply .compose-account:focus,
+  .inline-reply .compose-account:active,
+  .inline-reply .compose-account.is-selected {
+    background-color: var(--vanilla-light) !important;
+  }
+  .inline-reply .icon {
+    color: var(--vanilla-light) !important;
+  }
+  .inline-reply .compose-account {
+    margin: -4px !important;
+  }
+  .inline-reply .compose-text {
+    height: 100px !important;
+  }
+
+  /* TL関連 */
+  /* ツイート間マージン */
+  :not(.md-customDM) > .stream-item {
+    margin: 5px 10px !important;
+  }
+  /* これもtaiy */
+  /* Show moreをツイート風に */
+  .gap-chirp {
+    color: var(--berry) !important;
+    top: 0 !important;
+  }
+  .gap-chirp > .item-box {
+    padding: 10px !important;
+  }
+  /* 装飾を消す */
+  .gap-chirp::after,
+  .gap-chirp::before {
+    content: none !important;
+  }
+  /* 通知(Notifications)をシンプルにする */
+  .activity-header + .tweet.txt-mute > .tweet-header,
+  .activity-header + .tweet.txt-mute > .js-show-this-thread,
+  /* リプライ通知以外(いいね・RT)の返信先(Replying to) */
+  .activity-header + .tweet.txt-mute > .tweet-body .other-replies {
+    display: none !important;
+  }
+
+  /* いいね・RTしたユーザー一覧 */
+  .social-proof-for-tweet-title {
+    margin: 5px 10px !important;
+    padding: 10px !important;
+    background-color: var(--choco) !important;
+    color: var(--vanilla-light) !important;
+    border: 0 !important;
+    border-radius: 10px !important;
+  }
+
+  /* コレクションD&Dアイコン消去 */
+  .tweet-drag-handle {
+    display: none !important;
+  }
+
+  /* 読み込み系、とりあえずtaiyのをそのままコピペ */
+  /* GIF画像を文字に置換・ツイート風にする */
+  .js-infinitespinner {
+    height: auto !important;
+    text-align: center !important;
+    margin: 5px 10px 10px !important;
+    padding: 10px !important;
+    background: none !important;
+    background-color: var(--vanilla-light) !important;
+    border-radius: 10px !important;
+  }
+  .js-infinitespinner::before {
+    content: "Loading..." !important;
+    color: var(--berry) !important;
+    font-size: 15px !important;
+  }
+  .column-loading-placeholder .spinner-small {
+    display: none !important;
+  }
+  /* 検索時やローディング時のプレースホルダーをツイート風にする */
+  .list-placeholder,
+  .list-placeholder .l-cell {
+    display: block !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+  .list-placeholder p {
+    margin: 5px 10px !important;
+    padding: 10px !important;
+    text-shadow: none !important;
+    color: var(--berry) !important;
+    background-color: var(--vanilla-light) !important;
+    border-radius: 10px !important;
+    font-size: 15px !important;
+  }
+  /* MDTG先行実装系 */
+
+  /* bio系 */
+  /* 角丸をなくす */
+  .prf-header {
+    border-radius: 0 !important;
+  }
+  /* bio ヘッダー上に透過Layer追加 */
+  .prf-header-inner-overlay {
+    width: 100% !important;
+    height: 100% !important;
+    background: rgba(0, 0, 0, 0.25) !important;
+    backdrop-filter: blur(2px) !important;
+  }
+  /* bioアイコンのボーダー消し */
+  .prf-img > .avatar-border--2 {
+    border: 0 !important;
+  }
+  /* bio ボタン類 */
+  .prf .lst-profile i {
+    color: var(--berry) !important;
+  }
+  .prf .lst-profile span {
+    color: var(--choco) !important;
+  }
+  /* bio 数値 */
+  .prf-stats a strong {
+    color: var(--choco) !important;
+  }
+  /* bio follow等ボタン */
+  /* とカラムオプションのボタン系 */
+  .follow-btn .icon,
+  .follow-btn .Icon,
+  button:not(.text-hidden),
+  button.btn-options-tray:focus,
+  button.btn-options-tray:hover,
+  input[type="button"].btn-options-tray:focus,
+  input[type="button"].btn-options-tray:hover {
+    color: var(--berry) !important;
+  }
+  button:not(.Button--link):not(.Notification-closeButton) {
+    background-color: var(--vanilla-light) !important;
+    border: solid 1px var(--choco) !important;
+  }
+  button:not(.Button--link):not(.Notification-closeButton):focus,
+  button:not(.Button--link):not(.Notification-closeButton):active {
+    box-shadow: none !important;
+    background-color: rgba(224, 103, 102, 0.2) !important;
+  }
+
+  /* ドロップダウンメニュー・リストモーダル */
+  /* 背景 */
+  .dropdown-menu,
+  .lst-modal {
+    background-color: var(--vanilla-light) !important;
+  }
+  .lst-modal {
+    border-radius: 6px !important;
+  }
+  .caret-inner {
+    border-bottom-color: var(--vanilla-light) !important;
+  }
+  /* 文字色 */
+  .dropdown-menu a {
+    color: var(--choco) !important;
+  }
+  /* 選択時 */
+  .dropdown-menu .is-selected,
+  .lst .s-selected {
+    background-color: var(--choco) !important;
+    color: var(--vanilla-light) !important;
+  }
+  .dropdown-menu .is-selected a {
+    color: inherit !important;
+  }
+  .list-item-last {
+    border-bottom-left-radius: 0 !important;
+    border-bottom-right-radius: 0 !important;
+  }
+  /* 選択時 */
+  .dropdown-menu .is-selected,
+  .lst .s-selected,
+  .lst-group .selected,
+  .lst-group .selected a:hover,
+  .list-account:hover:active,
+  .list-account:hover:focus,
+  .list-account:hover:hover {
+    background-color: var(--choco) !important;
+    color: var(--vanilla-light) !important;
+  }
+  .dropdown-menu .is-selected a,
+  .list-account,
+  .lst-group .selected a,
+  .list-account .username {
+    color: inherit !important;
+    text-decoration: none !important;
+  }
+  .list-item-last {
+    border-bottom-left-radius: 0 !important;
+    border-bottom-right-radius: 0 !important;
+  }
+
+  /* カラム系動作とアイコン類 */
+  /* カラム追加文字色 */
+  .lst-launcher .column-type-icon ~ span,
+  .lst-launcher .is-disabled .column-type-icon ~ span {
+    color: var(--choco) !important;
+  }
+  /* いろんなアイコンここで潰すマン 改 */
+  .lst-launcher .column-type-icon,
+  .lst-launcher .is-disabled .column-type-icon {
+    color: var(--berry) !important;
+  }
+  /* 検索等box背景色 */
+  .js-app .js-column .column-header .column-title-edit-box,
+  .js-app .js-column .js-add-to-customtimeline input,
+  .js-app .js-column-options-container .with-column-divider-bottom {
+    color: var(--choco) !important;
+    background-color: var(--vanilla-light) !important;
+  }
+  .focus,
+  input:focus,
+  select:focus,
+  textarea:focus {
+    border-color: var(--berry) !important;
+  }
+  /* :is(.column-header-temp, .column-header-title) :is(.focus, input:focus, select:focus, textarea:focus) */
+  .column-header-temp .focus,
+  .column-header-temp input:focus,
+  .column-header-temp select:focus,
+  .column-header-temp textarea:focus,
+  .column-header-title .focus,
+  .column-header-title input:focus,
+  .column-header-title select:focus,
+  .column-header-title textarea:focus {
+    border-color: var(--honey) !important;
+  }
+
+  /* プロフィール背景 ボタン */
+  .js-modals-container .prf .prf-meta {
+    background-color: var(--vanilla-light) !important;
+  }
+  /* プロフィール背景 */
+  .s-profile,
+  .prf {
+    background-color: var(--vanilla-light) !important;
+  }
+  /* プロフィール背景(下) ブラー */
+  .ovl,
+  .overlay {
+    backdrop-filter: blur(4px) !important;
+  }
+
+  /* 個人ツイートpost背景 */
+  .js-chirp-container {
+    background-color: var(--vanilla) !important;
+  }
+  /* 個人ツイート欄背景 */
+  .column-header-title {
+    background-color: var(--vanilla) !important;
+  }
+  /* 個人ツイートカラムツイート欄 へっだ */
+  .column-header .column-header-temp {
+    color: var(--whipcream) !important;
+    background-color: var(--berry) !important;
+  }
+  /* 個人ツイート欄 外側背景 */
+  /* .js-modal-panel {
+    background-color: var(--vanilla) !important;
+    color: var(--choco) !important;
+  } */
+  /* 鍵アイコン色 */
+  .icon-protected {
+    color: var(--choco) !important;
+  }
+  /* カラム数の文字色・位置 */
+  .column-number {
+    color: var(--choco) !important;
+    top: 5px !important;
+    left: 5px !important;
+  }
+  /* ドラッグアイコンが被るので非表示 */
+  .column-drag-handle {
+    display: none !important;
+  }
+
+  /* モーダル */
+  div.mdl,
+  div.mdl-column-med {
+    background-color: var(--vanilla) !important;
+    color: var(--choco) !important;
+  }
+  .mdl-accent {
+    background-color: var(--vanilla-light) !important;
+  }
+  .mdl-header-divider {
+    border-bottom: 0 !important;
+  }
+
+  /* カラムヘッダー色 */
+  .column-header-title,
+  .column-header-temp {
+    background-color: var(--berry) !important;
+  }
+  /* モーダル内で若干ズレるため */
+  .column-header-title {
+    height: 49px !important;
+  }
+  /* カラムタイトル色 */
+  .column-title {
+    color: var(--whipcream) !important;
+  }
+  /* カラムアイコン色 */
+  .column-header .column-type-icon {
+    color: var(--choco) !important;
+  }
+  /* カラムアイコン色：新着 */
+  .is-new .column-type-icon {
+    color: var(--honey) !important;
+  }
+  /* カラムメッセージ(Filter等) */
+  .js-app .js-column .column-message {
+    background-color: var(--vanilla) !important;
+  }
+  /* カラム詳細設定 */
+  /* 開いたときにヘッダーの縁の色を付ける */
+  .column-header {
+    z-index: 100 !important;
+  }
+  .is-options-open .column-options {
+    padding-top: 10px !important;
+    margin-top: -10px !important;
+  }
+  /* アコーディオンの余白 */
+  .accordion-panel {
+    padding-top: 8px !important;
+  }
+  /* ↑を指定することで一部のボタンがずれる問題を修正 */
+  .location-form .icon-translator,
+  .location-form .Icon--close,
+  .location-form .icon-close {
+    top: calc(25px + 8px) !important;
+  }
+  /* 背景 */
+  .column-options,
+  .accordion-header,
+  .column-options .button-tray {
+    background-color: var(--vanilla-light) !important;
+  }
+  .facet-type.is-active {
+    background-color: var(--choco) !important;
+  }
+  /* 文字色 */
+  /* カラム詳細設定 開いた時 */
+  .accordion .is-active .accordion-header,
+  .accordion .is-active .accordion-header:hover,
+  .facet-subtitle {
+    color: var(--choco) !important;
+  }
+  .accordion .is-active .control-label:not(input):not(select):not(option),
+  .accordion .is-active .txt-mute:not(input):not(select):not(option),
+  .accordion .is-active .controls:not(input):not(select):not(option),
+  .txt-mute-text-only {
+    color: var(--vanilla-light) !important;
+  }
+  /* ↑を指定したことによるformタグの色の上書きを修正 */
+  .accordion .is-active input,
+  .accordion .is-active select,
+  .accordion .is-active option {
+    color: #14171a !important;
+  }
+  /* モーダル内のカラムオプションを非表示にする */
+  .mdl .column-temp:not(.is-options-open) .column-options {
+    display: none !important;
+  }
+  /* フィルターメッセージ */
+  [data-testid="filterMessage"] {
+    display: none !important;
+  }
+  /* クオリティフィルター警告文 */
+  .js-quality-filter-info,
+  .js-notification-filter-info,
+  .js-action-filter-error {
+    display: none !important;
+  }
+
+  /* カラム未読系 */
+  /* バーみたいなやつ */
+  .more-tweets-glow {
+    --more-glow: var(--honey);
+    background: radial-gradient(
+      ellipse farthest-corner at 50% 100%,
+      var(--more-glow) 0,
+      var(--more-glow) 25%,
+      #fff0 75%
+    ) !important;
+  }
+  /* 丸いアイコン(PCだけ？) */
+  .column-nav-updates {
+    color: var(--honey) !important;
+  }
+  /* DM */
+  .numbered-badge {
+    color: var(--whipcream) !important;
+    background-color: var(--honey) !important;
+    border-color: var(--whipcream) !important;
+  }
+  /* DMグループ系 */
+  /* グループの送信者名 */
+  .tweet-body.l-cell > .tweet-text:not(.js-tweet-text) {
+    color: var(--berry-light) !important;
+    font-size: 0.85714rem !important;
+  }
+  .tweet-body.l-cell > .txt-italic.txt-mute {
+    color: var(--choco) !important;
+    font-style: normal !important;
+  }
+
+  /* ツイート詳細背景 */
+  .js-app .js-column .js-tweet-detail {
+    background-color: var(--vanilla-light) !important;
+  }
+  /* ツイート詳細背景下 */
+  .js-app .column-detail .scroll-conversation {
+    background-color: var(--vanilla-light) !important;
+  }
+  /* ツイート詳細 アクションボタン */
+  .tweet-detail-action[rel="reply"] {
+    color: var(--soda) !important;
+  }
+  .tweet-detail-action[rel="retweet"] {
+    color: var(--melon) !important;
+  }
+  .tweet-detail-action[rel="favorite"] {
+    color: var(--berry) !important;
+  }
+  .tweet-detail-action[rel="actionsMenu"] {
+    color: var(--choco) !important;
+  }
+
+  /* ツイート詳細 */
+  /* Back to の文字 */
+  .column-title-back,
+  .column-header-title,
+  .column-title-container,
+  .column-title-container .username.txt-mute,
+  .column-title .attribution {
+    color: var(--whipcream) !important;
+  }
+
+  /* post */
+  /* SNcolor */
+  .username.txt-mute {
+    color: var(--berry-light) !important;
+  }
+
+  .rpl textarea {
+    color: var(--choco) !important;
+    background-color: var(--vanilla-light) !important;
+  }
+
+  /* DMユーザー追加 */
+  .add-participant {
+    margin: 5px 10px !important;
+    padding: 10px !important;
+    background-color: var(--vanilla-light) !important;
+    color: var(--choco) !important;
+    border: 0 !important;
+    border-radius: 10px !important;
+  }
+  .add-participant input {
+    background-color: #0000 !important;
+  }
+
+  /* 問題修正のコーナー */
+  /* 文字選択時 */
+  ::selection {
+    background: var(--honey) !important;
+    color: inherit !important;
+    text-shadow: none !important;
+  }
+  /* アカウント名の文字色 */
+  .account-link {
+    color: var(--berry) !important;
+  }
+  /* 引用リツイートでアイコンが少し表示されるのを修正 */
+  .compose .quoted-tweet .tweet-avatar {
+    display: none !important;
+  }
+  /* モーダル内のTLで背景が上書きされるのを修正 */
+  .column-background-fill {
+    background-color: #0000 !important;
+  }
+  /* Show this thread */
+  .js-show-this-thread,
+  .js-show-this-thread > * {
+    color: var(--choco) !important;
+  }
+  /* スレッドの点線がズレるのを修正(元の値 + ツイートのmargin-left) */
+  .thread.cursor-top-thread,
+  .thread.show-more-thread,
+  .thread.dot-thread {
+    left: calc(27px + 10px) !important;
+  }
+  /* トレンドなどの背景が上書きされるのを修正 */
+  .column .column-content {
+    background-color: #0000 !important;
+  }
+  /* Stay Openの背景や文字色が上書きされるのを防ぐ(PC用) */
+  .old-composer-footer {
+    background-color: #0000 !important;
+  }
+  .compose-remember-state {
+    color: inherit !important;
+  }
+  /* 予約投稿を引用リツイートっぽくする */
+  .scheduled-tweet {
+    border-color: var(--berry) !important;
+    border-radius: 10px !important;
+  }
+
+  /* DM宛先ボーダー */
+  .compose-message-recipient-input-container.is-focused {
+    box-shadow: none !important;
+  }
+
+  /* アカウント管理画面 */
+  .accounts-drawer {
+    color: var(--choco) !important;
+  }
+  .accounts-drawer a,
+  .accounts-drawer .column-title,
+  .accounts-drawer .column-close-link,
+  .accounts-drawer .icon,
+  .accounts-drawer .accordion .is-active,
+  .accounts-drawer .accordion,
+  .join-team {
+    color: inherit !important;
+  }
+  .account-settings-row,
+  .account-profile-header,
+  .join-team {
+    background-color: #0000 !important;
+  }
+
+  /* カラム背景 */
+  .app-columns-container,
+  .app-content {
+    background-color: var(--vanilla) !important;
+  }
+
+  /* 以下MarinDeckThemeGenerator */
+
+  .column-panel {
+    background-color: var(--vanilla) !important;
+  }
+  body {
+    background-color: var(--vanilla) !important;
+  }
+  .column-header {
+    background-color: var(--berry) !important;
+    border-radius: 0 0 10px 10px;
+    color: var(--whipcream) !important;
+  }
+  .stream-item {
+    background-color: var(--vanilla-light) !important;
+    border-radius: 10px;
+    color: var(--choco) !important;
+  }
+  .media-item,
+  .media-grid-container {
+    border-radius: 10px !important;
+  }
+  .quoted-tweet {
+    border-color: var(--berry) !important;
+    border-radius: 10px;
+  }
+  .tweet-action[rel="favorite"] {
+    color: var(--berry) !important;
+  }
+  .tweet-action[rel="actionsMenu"] {
+    color: var(--choco) !important;
+  }
+  a {
+    color: var(--berry) !important;
+  }
+  .column-header-link {
+    color: var(--choco) !important;
+  }
+  .tweet-action[rel="reply"] {
+    color: var(--soda) !important;
+  }
+  .tweet-action[rel="retweet"] {
+    color: var(--melon) !important;
+  }
+  /*Generated by https://mdtg.sbmr.in v0.17α*/
+
+  /* Dolce Fine. */
+}
+
+@at-root {
+  html {
+    color: var(--choco) !important;
+  }
+  /* Direct Message */
+  html .md-customDM > article {
+    min-height: unset !important;
+  }
+
+  /* DMのメッセージの間隔（margin, paddingの値は変えずにそのまま） */
+  html .md-customDM > article[md-onajiuser="top"] {
+    margin: -1px 0 6px !important;
+  }
+  html .md-customDM > article[md-onajiuser="top"] > div {
+    padding: 8px 10px 0 !important;
+  }
+  html .md-customDM > article[md-onajiuser="bottom"] {
+    margin: -1px 0 0 !important;
+  }
+  html .md-customDM > article[md-onajiuser="bottom"] > div {
+    padding: 0 10px !important;
+  }
+  html .md-customDM > article[md-onajiuser="bottom last"] {
+    margin: 6px 0 -1px !important;
+  }
+  html .md-customDM > article[md-onajiuser="bottom last"] > div {
+    padding: 0 10px 8px !important;
+  }
+
+  /* メッセージ全体（ここは透明で固定） */
+  html .js-message-detail.md-customDM > article {
+    background-color: #0000 !important;
+  }
+  /* 相手のメッセージ */
+  html .md-customDM > article .tweet > div.tweet-body > .tweet-text {
+    background-color: var(--color1) !important;
+    color: var(--fColor1) !important;
+  }
+  /* 自分のメッセージ */
+  html .md-customDM > article.md-myMsg .tweet > div.tweet-body > .tweet-text {
+    background-color: var(--color2) !important;
+    color: var(--fColor2) !important;
+  }
+  /* 相手の引用ツイート */
+  html .md-customDM > article .tweet > div.tweet-body > .quoted-tweet {
+    border-color: var(--color1) !important;
+  }
+  /* 自分の引用ツイート */
+  html .md-customDM > article.md-myMsg .tweet > div.tweet-body > .quoted-tweet {
+    border-color: var(--color2) !important;
+  }
+  /* 相手のメッセージ内のリンク */
+  html .md-customDM > article .tweet > div.tweet-body > .tweet-text > a {
+    text-decoration: underline;
+    color: var(--fColorA1) !important;
+  }
+  /* 自分のメッセージ内のリンク */
+  html
+    .md-customDM
+    > article.md-myMsg
+    .tweet
+    > div.tweet-body
+    > .tweet-text
+    > a {
+    text-decoration: underline;
+    color: var(--fColorA2) !important;
+  }
+  @include theme;
+}
+
+html.dark {
+  color: var(--choco) !important;
+
+  /* Direct Message */
+  .md-customDM > article {
+    min-height: unset !important;
+  }
+
+  /* DMのメッセージの間隔（margin, paddingの値は変えずにそのまま） */
+  .md-customDM > article[md-onajiuser="top"] {
+    margin: -1px 0 6px !important;
+  }
+  .md-customDM > article[md-onajiuser="top"] > div {
+    padding: 8px 10px 0 !important;
+  }
+  .md-customDM > article[md-onajiuser="bottom"] {
+    margin: -1px 0 0 !important;
+  }
+  .md-customDM > article[md-onajiuser="bottom"] > div {
+    padding: 0 10px !important;
+  }
+  .md-customDM > article[md-onajiuser="bottom last"] {
+    margin: 6px 0 -1px !important;
+  }
+  .md-customDM > article[md-onajiuser="bottom last"] > div {
+    padding: 0 10px 8px !important;
+  }
+
+  /* メッセージ全体（ここは透明で固定） */
+  .js-message-detail.md-customDM > article {
+    background-color: #0000 !important;
+  }
+  /* 相手のメッセージ */
+  .md-customDM > article .tweet > div.tweet-body > .tweet-text {
+    background-color: var(--color1) !important;
+    color: var(--fColor1) !important;
+  }
+  /* 自分のメッセージ */
+  .md-customDM > article.md-myMsg .tweet > div.tweet-body > .tweet-text {
+    background-color: var(--color2) !important;
+    color: var(--fColor2) !important;
+  }
+  /* 相手の引用ツイート */
+  .md-customDM > article .tweet > div.tweet-body > .quoted-tweet {
+    border-color: var(--color1) !important;
+  }
+  /* 自分の引用ツイート */
+  .md-customDM > article.md-myMsg .tweet > div.tweet-body > .quoted-tweet {
+    border-color: var(--color2) !important;
+  }
+  /* 相手のメッセージ内のリンク */
+  .md-customDM > article .tweet > div.tweet-body > .tweet-text > a {
+    text-decoration: underline;
+    color: var(--fColorA1) !important;
+  }
+  /* 自分のメッセージ内のリンク */
+  .md-customDM > article.md-myMsg .tweet > div.tweet-body > .tweet-text > a {
+    text-decoration: underline;
+    color: var(--fColorA2) !important;
+  }
+  @include theme;
+}
