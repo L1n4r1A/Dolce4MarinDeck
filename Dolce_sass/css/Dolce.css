@@ -44,81 +44,6 @@ html {
   color: var(--choco) !important;
 }
 
-/* Direct Message */
-html .md-customDM > article {
-  min-height: unset !important;
-}
-
-/* DMのメッセージの間隔（margin, paddingの値は変えずにそのまま） */
-html .md-customDM > article[md-onajiuser="top"] {
-  margin: -1px 0 6px !important;
-}
-
-html .md-customDM > article[md-onajiuser="top"] > div {
-  padding: 8px 10px 0 !important;
-}
-
-html .md-customDM > article[md-onajiuser="bottom"] {
-  margin: -1px 0 0 !important;
-}
-
-html .md-customDM > article[md-onajiuser="bottom"] > div {
-  padding: 0 10px !important;
-}
-
-html .md-customDM > article[md-onajiuser="bottom last"] {
-  margin: 6px 0 -1px !important;
-}
-
-html .md-customDM > article[md-onajiuser="bottom last"] > div {
-  padding: 0 10px 8px !important;
-}
-
-/* メッセージ全体（ここは透明で固定） */
-html .js-message-detail.md-customDM > article {
-  background-color: #0000 !important;
-}
-
-/* 相手のメッセージ */
-html .md-customDM > article .tweet > div.tweet-body > .tweet-text {
-  background-color: var(--color1) !important;
-  color: var(--fColor1) !important;
-}
-
-/* 自分のメッセージ */
-html .md-customDM > article.md-myMsg .tweet > div.tweet-body > .tweet-text {
-  background-color: var(--color2) !important;
-  color: var(--fColor2) !important;
-}
-
-/* 相手の引用ツイート */
-html .md-customDM > article .tweet > div.tweet-body > .quoted-tweet {
-  border-color: var(--color1) !important;
-}
-
-/* 自分の引用ツイート */
-html .md-customDM > article.md-myMsg .tweet > div.tweet-body > .quoted-tweet {
-  border-color: var(--color2) !important;
-}
-
-/* 相手のメッセージ内のリンク */
-html .md-customDM > article .tweet > div.tweet-body > .tweet-text > a {
-  text-decoration: underline;
-  color: var(--fColorA1) !important;
-}
-
-/* 自分のメッセージ内のリンク */
-html
-.md-customDM
-> article.md-myMsg
-.tweet
-> div.tweet-body
-> .tweet-text
-> a {
-  text-decoration: underline;
-  color: var(--fColorA2) !important;
-}
-
 div.md-prf > .md-prf_contents > .username > .prf-follow-status {
   color: var(--whipcream) !important;
 }
@@ -833,6 +758,75 @@ div.mdl-column-med {
   color: var(--berry-light) !important;
 }
 
+/* Direct Message */
+.md-customDM > article {
+  min-height: unset !important;
+}
+
+/* DMのメッセージの間隔（margin, paddingの値は変えずにそのまま） */
+.md-customDM > article[md-onajiuser="top"] {
+  margin: -1px 0 6px !important;
+}
+
+.md-customDM > article[md-onajiuser="top"] > div {
+  padding: 8px 10px 0 !important;
+}
+
+.md-customDM > article[md-onajiuser="bottom"] {
+  margin: -1px 0 0 !important;
+}
+
+.md-customDM > article[md-onajiuser="bottom"] > div {
+  padding: 0 10px !important;
+}
+
+.md-customDM > article[md-onajiuser="bottom last"] {
+  margin: 6px 0 -1px !important;
+}
+
+.md-customDM > article[md-onajiuser="bottom last"] > div {
+  padding: 0 10px 8px !important;
+}
+
+/* メッセージ全体（ここは透明で固定） */
+.js-message-detail.md-customDM > article {
+  background-color: #0000 !important;
+}
+
+/* 相手のメッセージ */
+.md-customDM > article .tweet > div.tweet-body > .tweet-text {
+  background-color: var(--color1) !important;
+  color: var(--fColor1) !important;
+}
+
+/* 自分のメッセージ */
+.md-customDM > article.md-myMsg .tweet > div.tweet-body > .tweet-text {
+  background-color: var(--color2) !important;
+  color: var(--fColor2) !important;
+}
+
+/* 相手の引用ツイート */
+.md-customDM > article .tweet > div.tweet-body > .quoted-tweet {
+  border-color: var(--color1) !important;
+}
+
+/* 自分の引用ツイート */
+.md-customDM > article.md-myMsg .tweet > div.tweet-body > .quoted-tweet {
+  border-color: var(--color2) !important;
+}
+
+/* 相手のメッセージ内のリンク */
+.md-customDM > article .tweet > div.tweet-body > .tweet-text > a {
+  text-decoration: underline;
+  color: var(--fColorA1) !important;
+}
+
+/* 自分のメッセージ内のリンク */
+.md-customDM > article.md-myMsg .tweet > div.tweet-body > .tweet-text > a {
+  text-decoration: underline;
+  color: var(--fColorA2) !important;
+}
+
 .rpl textarea {
   color: var(--choco) !important;
   background-color: var(--vanilla-light) !important;
@@ -1001,19 +995,79 @@ a {
   color: var(--melon) !important;
 }
 
+/* Direct Message */
+.md-customDM > article {
+  min-height: unset !important;
+}
+
+/* DMのメッセージの間隔（margin, paddingの値は変えずにそのまま） */
+.md-customDM > article[md-onajiuser="top"] {
+  margin: -1px 0 6px !important;
+}
+
+.md-customDM > article[md-onajiuser="top"] > div {
+  padding: 8px 10px 0 !important;
+}
+
+.md-customDM > article[md-onajiuser="bottom"] {
+  margin: -1px 0 0 !important;
+}
+
+.md-customDM > article[md-onajiuser="bottom"] > div {
+  padding: 0 10px !important;
+}
+
+.md-customDM > article[md-onajiuser="bottom last"] {
+  margin: 6px 0 -1px !important;
+}
+
+.md-customDM > article[md-onajiuser="bottom last"] > div {
+  padding: 0 10px 8px !important;
+}
+
+/* メッセージ全体（ここは透明で固定） */
+.js-message-detail.md-customDM > article {
+  background-color: #0000 !important;
+}
+
+/* 相手のメッセージ */
+.md-customDM > article .tweet > div.tweet-body > .tweet-text {
+  background-color: var(--color1) !important;
+  color: var(--fColor1) !important;
+}
+
+/* 自分のメッセージ */
+.md-customDM > article.md-myMsg .tweet > div.tweet-body > .tweet-text {
+  background-color: var(--color2) !important;
+  color: var(--fColor2) !important;
+}
+
+/* 相手の引用ツイート */
+.md-customDM > article .tweet > div.tweet-body > .quoted-tweet {
+  border-color: var(--color1) !important;
+}
+
+/* 自分の引用ツイート */
+.md-customDM > article.md-myMsg .tweet > div.tweet-body > .quoted-tweet {
+  border-color: var(--color2) !important;
+}
+
+/* 相手のメッセージ内のリンク */
+.md-customDM > article .tweet > div.tweet-body > .tweet-text > a {
+  text-decoration: underline;
+  color: var(--fColorA1) !important;
+}
+
+/* 自分のメッセージ内のリンク */
+.md-customDM > article.md-myMsg .tweet > div.tweet-body > .tweet-text > a {
+  text-decoration: underline;
+  color: var(--fColorA2) !important;
+}
+
 /*Generated by https://mdtg.sbmr.in v0.17α*/
 /* Dolce Fine. */
 html.dark {
   color: var(--choco) !important;
-  /* Direct Message */
-  /* DMのメッセージの間隔（margin, paddingの値は変えずにそのまま） */
-  /* メッセージ全体（ここは透明で固定） */
-  /* 相手のメッセージ */
-  /* 自分のメッセージ */
-  /* 相手の引用ツイート */
-  /* 自分の引用ツイート */
-  /* 相手のメッセージ内のリンク */
-  /* 自分のメッセージ内のリンク */
   /* 基本動作系統 */
   /* 改訂版 起動時ローディング画面：ロゴ */
   /* 薄いテキスト */
@@ -1115,6 +1169,15 @@ html.dark {
   /* Back to の文字 */
   /* post */
   /* SNcolor */
+  /* Direct Message */
+  /* DMのメッセージの間隔（margin, paddingの値は変えずにそのまま） */
+  /* メッセージ全体（ここは透明で固定） */
+  /* 相手のメッセージ */
+  /* 自分のメッセージ */
+  /* 相手の引用ツイート */
+  /* 自分の引用ツイート */
+  /* 相手のメッセージ内のリンク */
+  /* 自分のメッセージ内のリンク */
   /* DMユーザー追加 */
   /* 問題修正のコーナー */
   /* 文字選択時 */
@@ -1130,68 +1193,17 @@ html.dark {
   /* アカウント管理画面 */
   /* カラム背景 */
   /* 以下MarinDeckThemeGenerator */
+  /* Direct Message */
+  /* DMのメッセージの間隔（margin, paddingの値は変えずにそのまま） */
+  /* メッセージ全体（ここは透明で固定） */
+  /* 相手のメッセージ */
+  /* 自分のメッセージ */
+  /* 相手の引用ツイート */
+  /* 自分の引用ツイート */
+  /* 相手のメッセージ内のリンク */
+  /* 自分のメッセージ内のリンク */
   /*Generated by https://mdtg.sbmr.in v0.17α*/
   /* Dolce Fine. */
-}
-
-html.dark .md-customDM > article {
-  min-height: unset !important;
-}
-
-html.dark .md-customDM > article[md-onajiuser="top"] {
-  margin: -1px 0 6px !important;
-}
-
-html.dark .md-customDM > article[md-onajiuser="top"] > div {
-  padding: 8px 10px 0 !important;
-}
-
-html.dark .md-customDM > article[md-onajiuser="bottom"] {
-  margin: -1px 0 0 !important;
-}
-
-html.dark .md-customDM > article[md-onajiuser="bottom"] > div {
-  padding: 0 10px !important;
-}
-
-html.dark .md-customDM > article[md-onajiuser="bottom last"] {
-  margin: 6px 0 -1px !important;
-}
-
-html.dark .md-customDM > article[md-onajiuser="bottom last"] > div {
-  padding: 0 10px 8px !important;
-}
-
-html.dark .js-message-detail.md-customDM > article {
-  background-color: #0000 !important;
-}
-
-html.dark .md-customDM > article .tweet > div.tweet-body > .tweet-text {
-  background-color: var(--color1) !important;
-  color: var(--fColor1) !important;
-}
-
-html.dark .md-customDM > article.md-myMsg .tweet > div.tweet-body > .tweet-text {
-  background-color: var(--color2) !important;
-  color: var(--fColor2) !important;
-}
-
-html.dark .md-customDM > article .tweet > div.tweet-body > .quoted-tweet {
-  border-color: var(--color1) !important;
-}
-
-html.dark .md-customDM > article.md-myMsg .tweet > div.tweet-body > .quoted-tweet {
-  border-color: var(--color2) !important;
-}
-
-html.dark .md-customDM > article .tweet > div.tweet-body > .tweet-text > a {
-  text-decoration: underline;
-  color: var(--fColorA1) !important;
-}
-
-html.dark .md-customDM > article.md-myMsg .tweet > div.tweet-body > .tweet-text > a {
-  text-decoration: underline;
-  color: var(--fColorA2) !important;
 }
 
 html.dark div.md-prf > .md-prf_contents > .username > .prf-follow-status {
@@ -1879,6 +1891,66 @@ html.dark .username.txt-mute {
   color: var(--berry-light) !important;
 }
 
+html.dark .md-customDM > article {
+  min-height: unset !important;
+}
+
+html.dark .md-customDM > article[md-onajiuser="top"] {
+  margin: -1px 0 6px !important;
+}
+
+html.dark .md-customDM > article[md-onajiuser="top"] > div {
+  padding: 8px 10px 0 !important;
+}
+
+html.dark .md-customDM > article[md-onajiuser="bottom"] {
+  margin: -1px 0 0 !important;
+}
+
+html.dark .md-customDM > article[md-onajiuser="bottom"] > div {
+  padding: 0 10px !important;
+}
+
+html.dark .md-customDM > article[md-onajiuser="bottom last"] {
+  margin: 6px 0 -1px !important;
+}
+
+html.dark .md-customDM > article[md-onajiuser="bottom last"] > div {
+  padding: 0 10px 8px !important;
+}
+
+html.dark .js-message-detail.md-customDM > article {
+  background-color: #0000 !important;
+}
+
+html.dark .md-customDM > article .tweet > div.tweet-body > .tweet-text {
+  background-color: var(--color1) !important;
+  color: var(--fColor1) !important;
+}
+
+html.dark .md-customDM > article.md-myMsg .tweet > div.tweet-body > .tweet-text {
+  background-color: var(--color2) !important;
+  color: var(--fColor2) !important;
+}
+
+html.dark .md-customDM > article .tweet > div.tweet-body > .quoted-tweet {
+  border-color: var(--color1) !important;
+}
+
+html.dark .md-customDM > article.md-myMsg .tweet > div.tweet-body > .quoted-tweet {
+  border-color: var(--color2) !important;
+}
+
+html.dark .md-customDM > article .tweet > div.tweet-body > .tweet-text > a {
+  text-decoration: underline;
+  color: var(--fColorA1) !important;
+}
+
+html.dark .md-customDM > article.md-myMsg .tweet > div.tweet-body > .tweet-text > a {
+  text-decoration: underline;
+  color: var(--fColorA2) !important;
+}
+
 html.dark .rpl textarea {
   color: var(--choco) !important;
   background-color: var(--vanilla-light) !important;
@@ -2044,4 +2116,64 @@ html.dark .tweet-action[rel="reply"] {
 
 html.dark .tweet-action[rel="retweet"] {
   color: var(--melon) !important;
+}
+
+html.dark .md-customDM > article {
+  min-height: unset !important;
+}
+
+html.dark .md-customDM > article[md-onajiuser="top"] {
+  margin: -1px 0 6px !important;
+}
+
+html.dark .md-customDM > article[md-onajiuser="top"] > div {
+  padding: 8px 10px 0 !important;
+}
+
+html.dark .md-customDM > article[md-onajiuser="bottom"] {
+  margin: -1px 0 0 !important;
+}
+
+html.dark .md-customDM > article[md-onajiuser="bottom"] > div {
+  padding: 0 10px !important;
+}
+
+html.dark .md-customDM > article[md-onajiuser="bottom last"] {
+  margin: 6px 0 -1px !important;
+}
+
+html.dark .md-customDM > article[md-onajiuser="bottom last"] > div {
+  padding: 0 10px 8px !important;
+}
+
+html.dark .js-message-detail.md-customDM > article {
+  background-color: #0000 !important;
+}
+
+html.dark .md-customDM > article .tweet > div.tweet-body > .tweet-text {
+  background-color: var(--color1) !important;
+  color: var(--fColor1) !important;
+}
+
+html.dark .md-customDM > article.md-myMsg .tweet > div.tweet-body > .tweet-text {
+  background-color: var(--color2) !important;
+  color: var(--fColor2) !important;
+}
+
+html.dark .md-customDM > article .tweet > div.tweet-body > .quoted-tweet {
+  border-color: var(--color1) !important;
+}
+
+html.dark .md-customDM > article.md-myMsg .tweet > div.tweet-body > .quoted-tweet {
+  border-color: var(--color2) !important;
+}
+
+html.dark .md-customDM > article .tweet > div.tweet-body > .tweet-text > a {
+  text-decoration: underline;
+  color: var(--fColorA1) !important;
+}
+
+html.dark .md-customDM > article.md-myMsg .tweet > div.tweet-body > .tweet-text > a {
+  text-decoration: underline;
+  color: var(--fColorA2) !important;
 }
